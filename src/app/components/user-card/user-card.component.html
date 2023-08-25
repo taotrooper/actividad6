@@ -1,0 +1,20 @@
+<div class="card p-2 m-2">
+    <div class="text-center">
+        <img [src]="miUser?.image" class="card-img-top rounded-circle p-3" />
+        <h5 class="card-title mt-2">{{miUser?.first_name}} {{miUser?.last_name}}</h5>
+        <div class="d-flex justify-content-around">
+            <div class="btn" [routerLink]="['/user', miUser?._id]">
+                <span class="material-icons h1">search</span>
+                <p>Ver detalle</p>
+            </div>
+            <div class="btn" [routerLink]="['/updateuser', miUser?._id]">
+                <span class="material-icons h1">autorenew</span>
+                <p>Actualizar</p>
+            </div>
+            <div class="btn">
+                <span class="material-icons h1">delete</span>
+                <p>Borrar</p>
+            </div>
+        </div>
+    </div>
+</div>

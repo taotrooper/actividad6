@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { UserComponent } from './pages/user/user.component';
 import { FormComponent } from './components/form/form.component';
+import { UserCardComponent } from './components/user-card/user-card.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormComponent } from './components/form/form.component';
     HeaderComponent,
     HomeComponent,
     UserComponent,
-    FormComponent
+    FormComponent,
+    UserCardComponent
   ],
   imports: [
     BrowserModule,

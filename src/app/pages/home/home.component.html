@@ -1,1 +1,13 @@
-<p>home works!</p>
+<section class="container mt-3">
+    <div class="row g-2">
+        <article class="col-12 col-md-6 col-lg-3" *ngFor="let user of arrUsers">
+            <app-user-card [miUser]="user"></app-user-card>
+        </article>
+    </div>
+    <nav class="m-2">
+        <ul class="pagination pagination-lg">
+            <li class="page-item"><a class="page-link" (click)="loadPage(1)">1</a></li>
+            <li class="page-item"><a class="page-link" (click)="loadPage(2)">2</a></li>
+        </ul>
+    </nav>
+</section>
