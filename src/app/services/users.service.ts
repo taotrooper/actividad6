@@ -31,7 +31,7 @@ export class UsersService {
   }
 
   delete(id: string) {
-
+    return lastValueFrom(this.httpClient.delete<any>(`${this.baseUrl}${id}`));
   }
 
   insert(formValue: User) {
