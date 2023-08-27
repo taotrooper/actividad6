@@ -10,6 +10,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { UserComponent } from './pages/user/user.component';
 import { FormComponent } from './components/form/form.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UserCardComponent } from './components/user-card/user-card.component';
     HomeComponent,
     UserComponent,
     FormComponent,
-    UserCardComponent
+    UserCardComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
