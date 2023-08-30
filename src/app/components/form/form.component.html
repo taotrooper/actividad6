@@ -1,1 +1,36 @@
-<p>form works!</p>
+<div class="container mt-2">
+    <div *ngIf="id; then titleUpdate else titleNew"></div>
+    <ng-template #titleUpdate>
+        <h3>ACTUALIZAR USUARIO</h3>
+    </ng-template>
+    <ng-template #titleNew>
+        <h3>NUEVO USUARIO</h3>
+    </ng-template>
+    <form [formGroup]="postForm" (ngSubmit)="getDataForm()" class="mt-3">
+        <div class="form-group mb-2">
+            <label for="first_name">Nombre Usuario</label>
+            <input type="text" class="form-control" id="first_name" placeholder="Introduzca nombre" formControlName="first_name">
+            <p class="error" *ngIf="checkControl('first_name', 'required')">El campo es requerido</p>
+            <p class="error" *ngIf="checkControl('first_name', 'minlength')">El campo es muy corto</p>
+        </div>
+        <div class="form-group mb-2">
+            <label for="last_name">Apellido Usuario</label>
+            <input type="text" class="form-control" id="last_name" placeholder="Introduzca apellido" formControlName="last_name">
+            <p class="error" *ngIf="checkControl('last_name', 'required')">El campo es requerido</p>
+            <p class="error" *ngIf="checkControl('last_name', 'minlength')">El campo es muy corto</p>
+        </div>
+        <div class="form-group mb-2">
+            <label for="email">Email Usuario</label>
+            <input type="email" class="form-control" id="email" placeholder="Introduzca email" formControlName="email">
+            <p class="error" *ngIf="checkControl('email', 'required')">El campo es requerido</p>
+            <p class="error" *ngIf="checkControl('email', 'pattern')">El email tiene formato incorrecto</p>
+        </div>
+        <div class="form-group mb-2">
+            <label for="image">Imagen Usuario</label>
+            <input type="url" class="form-control" id="image" placeholder="Introduzca URL de imagen" formControlName="image">
+            <p class="error" *ngIf="checkControl('image', 'required')">El campo es requerido</p>
+            <p class="error" *ngIf="checkControl('image', 'pattern')">La URL tiene formato incorrecto</p>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2" [disabled]="!postForm.valid" [innerText]="buttonText"></button>
+    </form>
+</div>

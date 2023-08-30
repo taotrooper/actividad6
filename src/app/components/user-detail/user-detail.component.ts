@@ -19,7 +19,7 @@ export class UserDetailComponent {
   swalDeleteUser() {
     Swal.fire({
       title: '¿Estás seguro?',
-      text: "¿Deseas borrar este usuario?",
+      text: `¿Deseas borrar al usuario ${this.user.first_name}?`,
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',

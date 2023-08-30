@@ -26,16 +26,16 @@ export class UsersService {
     return 1;
   }*/
 
-  update(formValue: User) {
-
+  update(formValue: User): Promise<any> {
+    return lastValueFrom(this.httpClient.put<User>(`${this.baseUrl}${formValue._id}`, formValue))
   }
 
-  delete(id: string) {
+  delete(id: string): Promise<any> {
     return lastValueFrom(this.httpClient.delete<any>(`${this.baseUrl}${id}`));
   }
 
-  insert(formValue: User) {
-
+  insert(formValue: User): Promise<any> {
+    return lastValueFrom(this.httpClient.post<User>(this.baseUrl, formValue));
   }
 
 }
