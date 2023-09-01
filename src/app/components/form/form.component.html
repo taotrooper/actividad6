@@ -30,6 +30,7 @@
             <input type="url" class="form-control" id="image" placeholder="Introduzca URL de imagen" formControlName="image">
             <p class="error" *ngIf="checkControl('image', 'required')">El campo es requerido</p>
             <p class="error" *ngIf="checkControl('image', 'pattern')">La URL tiene formato incorrecto</p>
+            <p class="error" *ngIf="checkControl('image', 'minlength')">El campo es muy corto</p>
         </div>
         <button type="submit" class="btn btn-primary mt-2" [disabled]="!postForm.valid" [innerText]="buttonText"></button>
     </form>
